@@ -24,7 +24,7 @@ describe('Delimiter drawer', () => {
                 .append('text')
                 .classed(extremum, true);
 
-            delimiters(svg, scales, 0, dateFormat);
+            delimiters(svg, scales, dateFormat);
             
             expect(svg.selectAll(`.${extremum}`).size()).toBe(1, `for ${extremum}`);
         });
@@ -32,14 +32,14 @@ describe('Delimiter drawer', () => {
 
     it('should display formated start date of current displayed scale', () => {
         scales.x.domain([new Date('2014-01-01'), new Date('2014-04-01')]);
-        delimiters(svg, scales, 0, dateFormat);
+        delimiters(svg, scales, dateFormat);
 
         expect(svg.select('.extremum .minimum').text()).toBe('01 January 2014');
     });
 
     it('should display formated end date of current displayed scale', () => {
         scales.x.domain([new Date('2014-01-01'), new Date('2014-05-01')]);
-        delimiters(svg, scales, 0, dateFormat);
+        delimiters(svg, scales, dateFormat);
 
         expect(svg.select('.extremum .maximum').text()).toBe('01 May 2014');
     });
