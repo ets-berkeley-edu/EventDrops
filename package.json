@@ -57,19 +57,12 @@
     "test": "test"
   },
   "scripts": {
-    "precommit": "lint-staged",
     "start": "webpack-dev-server --colors --devtool cheap-module-inline-source-map --host=0.0.0.0",
     "karma": "karma start test/karma/karma.conf.js",
     "test": "npm run karma -- --single-run",
     "test-watch": "npm run karma",
     "run": "npm start",
     "build": "webpack -p --optimize-minimize --optimize-occurence-order --optimize-dedupe --progress --devtool source-map"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write --tab-width 4 --single-quote --trailing-comma es5",
-      "git add"
-    ]
   },
   "author": "Thiery Michel <thiery@marmelab.com>",
   "contributors": [
